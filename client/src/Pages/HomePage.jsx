@@ -12,7 +12,7 @@ function HomePage() {
       const result = await axios.get(
         `http://localhost:4001/trips?keywords=${searchQuery}`
       );
-      if (result.status === 200) {
+      if (result.status >= 200 && result.status <= 210) {
         setArticles(result.data.data);
       }
     } catch (error) {
